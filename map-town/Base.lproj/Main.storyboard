@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,25 +19,22 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="map_town" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r5Y-9N-e6n"/>
+                        <viewControllerLayoutGuide type="bottom" id="siS-9E-mGX"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8f-4y-W5t">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="667" id="Pnf-3v-0bo"/>
-                                </constraints>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEo-y7-54S">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to drop pin and get photos near you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om9-wc-jSk">
                                         <rect key="frame" x="5" y="12" width="364" height="46"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="359" id="TzA-kd-mEQ"/>
-                                            <constraint firstAttribute="height" constant="46" id="Ywh-3g-t67"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -45,16 +42,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="om9-wc-jSk" firstAttribute="centerX" secondItem="TEo-y7-54S" secondAttribute="centerX" id="7pf-sW-39E"/>
-                                    <constraint firstAttribute="height" constant="70" id="Glq-cj-5xh"/>
-                                    <constraint firstItem="om9-wc-jSk" firstAttribute="centerY" secondItem="TEo-y7-54S" secondAttribute="centerY" id="QZc-CK-m6r"/>
+                                    <constraint firstItem="om9-wc-jSk" firstAttribute="centerX" secondItem="TEo-y7-54S" secondAttribute="centerX" id="AOe-HW-Bj3"/>
+                                    <constraint firstItem="om9-wc-jSk" firstAttribute="centerY" secondItem="TEo-y7-54S" secondAttribute="centerY" id="Dap-cl-CgF"/>
+                                    <constraint firstItem="om9-wc-jSk" firstAttribute="top" secondItem="TEo-y7-54S" secondAttribute="top" constant="12" id="ZtN-c1-9gG"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grc-88-WrI">
                                 <rect key="frame" x="309" y="597" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="4Vw-mz-6eQ"/>
-                                    <constraint firstAttribute="height" constant="50" id="Kt1-v6-C8R"/>
+                                    <constraint firstAttribute="width" constant="50" id="RJi-mF-INQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="iJr-Dz-CmB"/>
                                 </constraints>
                                 <state key="normal" image="locationButton"/>
                                 <connections>
@@ -68,20 +65,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TEo-y7-54S" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5u2-iW-ZOm"/>
-                            <constraint firstItem="WQg-aB-9Ii" firstAttribute="top" secondItem="X8f-4y-W5t" secondAttribute="bottom" id="85x-ym-RiH"/>
-                            <constraint firstItem="X8f-4y-W5t" firstAttribute="leading" secondItem="WQg-aB-9Ii" secondAttribute="leading" id="My4-0B-4QF"/>
-                            <constraint firstItem="WQg-aB-9Ii" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="O4g-95-00o"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Grc-88-WrI" secondAttribute="trailing" constant="16" id="ZFh-67-4Yg"/>
-                            <constraint firstAttribute="trailing" secondItem="WQg-aB-9Ii" secondAttribute="trailing" id="enp-gQ-y4E"/>
-                            <constraint firstItem="X8f-4y-W5t" firstAttribute="top" secondItem="TEo-y7-54S" secondAttribute="top" id="nMm-wM-Cdy"/>
-                            <constraint firstItem="TEo-y7-54S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nQn-b1-65t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Grc-88-WrI" secondAttribute="bottom" constant="20" id="nna-Ib-4KZ"/>
-                            <constraint firstItem="WQg-aB-9Ii" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pNW-z0-Jmd"/>
-                            <constraint firstItem="TEo-y7-54S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="weD-1S-uYh"/>
-                            <constraint firstItem="X8f-4y-W5t" firstAttribute="trailing" secondItem="WQg-aB-9Ii" secondAttribute="trailing" id="wij-D6-bUs"/>
+                            <constraint firstItem="X8f-4y-W5t" firstAttribute="leading" secondItem="WQg-aB-9Ii" secondAttribute="leading" id="0iX-IK-v9B"/>
+                            <constraint firstItem="TEo-y7-54S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AB3-aD-xiz"/>
+                            <constraint firstItem="Grc-88-WrI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Dnb-pw-9lv"/>
+                            <constraint firstItem="TEo-y7-54S" firstAttribute="leading" secondItem="X8f-4y-W5t" secondAttribute="leading" id="FgE-9a-HrB"/>
+                            <constraint firstItem="X8f-4y-W5t" firstAttribute="trailing" secondItem="WQg-aB-9Ii" secondAttribute="trailing" id="Nyf-eW-17d"/>
+                            <constraint firstItem="X8f-4y-W5t" firstAttribute="trailing" secondItem="TEo-y7-54S" secondAttribute="trailing" id="QUB-4j-cAn"/>
+                            <constraint firstItem="X8f-4y-W5t" firstAttribute="top" secondItem="TEo-y7-54S" secondAttribute="top" id="R5c-id-Tsp"/>
+                            <constraint firstAttribute="bottom" secondItem="TEo-y7-54S" secondAttribute="bottom" constant="597" id="SpP-hX-wJG"/>
+                            <constraint firstItem="X8f-4y-W5t" firstAttribute="bottom" secondItem="siS-9E-mGX" secondAttribute="top" id="Wm7-2x-v8S"/>
+                            <constraint firstAttribute="bottom" secondItem="Grc-88-WrI" secondAttribute="bottom" constant="20" symbolic="YES" id="Yv9-2L-QmZ"/>
+                            <constraint firstAttribute="trailing" secondItem="TEo-y7-54S" secondAttribute="trailing" id="aoN-IV-QdS"/>
+                            <constraint firstItem="X8f-4y-W5t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cRs-zG-i6q"/>
+                            <constraint firstItem="WQg-aB-9Ii" firstAttribute="top" secondItem="siS-9E-mGX" secondAttribute="top" id="hvI-O6-pB7"/>
+                            <constraint firstItem="WQg-aB-9Ii" firstAttribute="bottom" secondItem="siS-9E-mGX" secondAttribute="top" id="p6J-AB-dli"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="X8f-4y-W5t" id="wSt-fj-UL3"/>

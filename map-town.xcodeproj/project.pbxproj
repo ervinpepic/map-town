@@ -278,6 +278,7 @@
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		A6FDDF02200808FF00F7EFDD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
